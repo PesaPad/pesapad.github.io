@@ -275,6 +275,7 @@ h1 {
     display: block;
 }
 .play-btn {
+    text-decoration: none;
     position: absolute;
     top: 50%;
     left: 50%;
