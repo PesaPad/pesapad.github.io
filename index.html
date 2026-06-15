@@ -178,12 +178,14 @@
       </div>
     </section>
 
-    <section id="support" class="support mx-4 md:mx-0">
-      <div class="container text-center">
+    <section id="support" class="support">
+      <div class="container">
         <h2>Keep Pesapad free – for everyone</h2>
-        <p style="text-align: center">
+        <p class="section-subtitle">
           Your voluntary support helps maintain servers and add new features.
         </p>
+
+        <!-- Traditional donation methods -->
         <div class="donation-grid">
           <a
             href="https://buymeacoffee.com/pesapad"
@@ -203,10 +205,14 @@
             <h3>Ko-fi</h3>
             <p>0% fees, one‑time or memberships</p>
           </a>
-          <a href="https://paypal.com" target="_blank" class="donation-card">
+          <a
+            href="https://paypal.me/pesapad"
+            target="_blank"
+            class="donation-card"
+          >
             <i class="fab fa-paypal"></i>
             <h3>PayPal</h3>
-            <p>Send to pesapad.app@gmail.com</p>
+            <p>Send to @pesapad</p>
           </a>
           <a
             href="https://github.com/sponsors/pesapad"
@@ -218,9 +224,115 @@
             <p>Support open‑source development</p>
           </a>
         </div>
+
+        <!-- Cryptocurrency donations -->
+        <div class="crypto-section" id="crypto">
+          <div class="crypto-header">
+            <i class="fas fa-coins"></i>
+            <h3>Cryptocurrency Donations</h3>
+            <p>
+              Send crypto directly to support Pesapad – copy any address below.
+            </p>
+          </div>
+          <div class="crypto-grid">
+            <!-- Bitcoin -->
+            <div class="crypto-card">
+              <div class="crypto-icon">
+                <img
+                  src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg"
+                  alt="Bitcoin"
+                  width="32"
+                  height="32"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Bitcoin (BTC)</span>
+              </div>
+              <div class="address-row">
+                <code id="btc-address">bc1q2v229l0pj0auskul9yf78vq5p2tmlv75x89j8s</code>
+                <button
+                  onclick="copyToClipboard('btc-address')"
+                  class="copy-btn"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Ethereum -->
+            <div class="crypto-card">
+              <div class="crypto-icon">
+                <img
+                  src="https://cryptologos.cc/logos/ethereum-eth-logo.svg"
+                  alt="Ethereum"
+                  width="32"
+                  height="32"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Ethereum (ETH)</span>
+              </div>
+              <div class="address-row">
+                <code id="eth-address">0x7d7433768c74e742ea6c5118ff38b5caa945fb29</code>
+                <button
+                  onclick="copyToClipboard('eth-address')"
+                  class="copy-btn"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Solana -->
+            <div class="crypto-card">
+              <div class="crypto-icon">
+                <img
+                  src="https://cryptologos.cc/logos/solana-sol-logo.svg"
+                  alt="Solana"
+                  width="32"
+                  height="32"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Solana (SOL)</span>
+              </div>
+              <div class="address-row">
+                <code id="sol-address">Z2UnnWt9oaM1AqDwksi5WrYwMgJxwfBcDpMWY8Sh5HJ</code>
+                <button
+                  onclick="copyToClipboard('sol-address')"
+                  class="copy-btn"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <!-- Dogecoin -->
+            <div class="crypto-card">
+              <div class="crypto-icon">
+                <img
+                  src="https://cryptologos.cc/logos/dogecoin-doge-logo.svg"
+                  alt="Dogecoin"
+                  width="32"
+                  height="32"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Dogecoin (DOGE)</span>
+              </div>
+              <div class="address-row">
+                <code id="doge-address">DRVoAYndbsXi9kY2L2Hc9tmCuJ8eG1hFJE</code>
+                <button
+                  onclick="copyToClipboard('doge-address')"
+                  class="copy-btn"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="crypto-note">
+            Only send the respective cryptocurrency to each address.
+            Double‑check the network.
+          </p>
+        </div>
+
         <p class="support-note">
-          All donations go directly to server costs, app store fees, and feature
-          development.
+          💚 All donations go directly to server costs, app store fees, and
+          feature development.
         </p>
       </div>
     </section>
@@ -236,7 +348,8 @@
           ><i class="fas fa-download"></i> Download APK (Android)</a
         >
         <p class="download-note">
-          No fees. Optional ads. Just download, sign up and start tracking. <br>Give it a try.
+          No fees. Optional ads. Just download, sign up and start tracking.
+          <br />Give it a try. It helps!
         </p>
       </div>
     </section>
