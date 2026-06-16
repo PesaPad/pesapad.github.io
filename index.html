@@ -1,22 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pesapad – Free Bill Tracker for Small Businesses</title>
+    <title>Pesapad – Know Your Numbers | Free Offline Bill Tracker</title>
     <meta
       name="description"
-      content="Pesapad: offline bill tracking, customer & supplier management, trust rankings. 100% free, optional ads."
+      content="Track customer debts, manage supplier payments, and get trust rankings — completely offline, completely free. No monthly fees, no internet required."
     />
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/pesapad_logo_padded.png"
+    <meta
+      name="keywords"
+      content="bill tracker, offline, small business, debt tracker, free, no monthly fees, trust ranking, customer debts, supplier payments"
     />
+    <meta name="author" content="Pesapad" />
+    <meta property="og:title" content="Pesapad – Know Your Numbers" />
+    <meta
+      property="og:description"
+      content="Free offline bill tracker for small businesses. Track debts, manage payments, get trust rankings."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              stone: {
+                50: "#fafaf9",
+                100: "#f5f5f4",
+                200: "#e7e5e4",
+                300: "#d6d3d1",
+                400: "#a8a29e",
+                500: "#78716c",
+                600: "#57534e",
+                700: "#44403c",
+                800: "#292524",
+                900: "#1c1917",
+                950: "#0c0a09",
+              },
+              amber: {
+                50: "#fffbeb",
+                100: "#fef3c7",
+                200: "#fde68a",
+                300: "#fcd34d",
+                400: "#fbbf24",
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+                800: "#92400e",
+                900: "#78350f",
+              },
+              customer: { 500: "#2E7D32" },
+              supplier: { 500: "#FF695F" },
+            },
+            fontFamily: {
+              display: ["Inter", "system-ui", "sans-serif"],
+              body: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -24,169 +75,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/pesapad_logo_padded.png"
+    />
   </head>
-  <body>
-    <nav>
-      <div class="nav-container">
-        <a href="#" class="logo">
-          <img
-            src="assets/images/pesapad_logo_padded.png"
-            alt="Pesapad"
-            class="logo-img"
-            onerror="this.src = 'https://via.placeholder.com/32'"
-          />
-          <span>Pesapad</span>
-        </a>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#demo">Demo</a>
-          <a href="#creator">Creator</a>
-          <a href="#support">Support</a>
-          <a href="#download" class="download-btn-nav">Download Free</a>
-        </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fas fa-bars"></i>
+  <body class="bg-stone-950 text-white overflow-x-hidden">
+    <!-- ====== SUPPORT MODAL ====== -->
+    <div
+      id="supportModal"
+      class="support-modal-overlay"
+      onclick="if (event.target === this) closeSupportModal();"
+    >
+      <div class="support-modal">
+        <button
+          onclick="closeSupportModal()"
+          class="float-right text-stone-400 hover:text-white transition-colors"
+        >
+          <i class="fas fa-times text-xl"></i>
         </button>
-      </div>
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#features">Features</a>
-        <a href="#demo">Demo</a>
-        <a href="#creator">Creator</a>
-        <a href="#support">Support</a>
-        <a href="#download">Download</a>
-      </div>
-    </nav>
-
-    <section class="hero mx-20">
-      <div class="hero-grid">
-        <div>
-          <span class="hero-badge">Made for Small Business Owners</span>
-          <h1>Know your numbers</h1>
-          <p>
-            Track customers & suppliers, send reminders & promises, and get
-            trust rankings – all offline, no monthly fees, with optional ads you
-            choose to watch. Works in any currency.
-          </p>
-          <div class="feature-list">
-            <div><i class="fas fa-plane-slash"></i> Works offline</div>
-            <div><i class="fas fa-fingerprint"></i> PIN/Fingerprint</div>
-            <div><i class="fas fa-comments-dollar"></i> Send warnings</div>
-            <div><i class="fas fa-ranking-star"></i> Trust rankings</div>
-          </div>
-          <div class="hero-buttons">
-            <a href="#download" class="btn-primary"
-              ><i class="fas fa-download"></i> Download APK</a
-            >
-            <a href="#demo" class="btn-outline"
-              ><i class="fas fa-play"></i> Watch Demo</a
-            >
-          </div>
-        </div>
-        <div class="hero-image">
-          <img
-            src="assets/images/pesapad_intro.jpg"
-            alt="Pesapad Intro"
-            class="app-mockup"
-            onerror="this.src = 'https://via.placeholder.com/400x600'"
-          />
-          <div class="floating-badge zero-cost text-center">
-            $0<span>COST</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features" class="features mx-4 md:mx-0">
-      <div class="container">
-        <h2>Powerful features, zero complexity</h2>
-        <div class="divider"></div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <i class="fas fa-users"></i>
-            <h3>Customer & Supplier</h3>
-            <p>
-              Customers are who you gave money to and Suppliers are who you
-              borrowed money from.
-            </p>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-comments-dollar"></i>
-            <h3>Send Warnings</h3>
-            <p>Customers get reminders and suppliers get promises.</p>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-ranking-star"></i>
-            <h3>Trust Rankings</h3>
-            <p>
-              See which customers you should trust the most and which suppliers
-              trust you the most.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="demo" class="demo mx-4 md:mx-0">
-      <div class="container">
-        <h2>See it in action</h2>
-        <div class="divider"></div>
-        <div class="video-container">
-          <img
-            src="assets/images/pesapad_logo_padded.png"
-            alt="Video thumbnail"
-            class="video-thumb"
-          />
-          <a
-            href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
-            target="_blank"
-            class="play-btn"
-            ><i class="fas fa-play"></i
-          ></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="creator" class="creator mx-4 md:mx-0">
-      <div class="container creator-grid">
-        <img
-          src="assets/images/profile.jpg"
-          alt="Brian Kebabe"
-          class="creator-img"
-          onerror="this.src = 'https://via.placeholder.com/400'"
-        />
-        <div>
-          <h2>Built by a developer who understands small business</h2>
-          <p>
-            Brian Mirieri Kebabe, a full‑stack developer from Mombasa, created
-            Pesapad after seeing his family's shop struggle with paper receipts.
-            He believes essential tools should be free and accessible.
-          </p>
-          <div class="creator-links">
-            <a href="https://briankebabe.github.io" target="_blank"
-              ><i class="fas fa-globe"></i
-            ></a>
-            <a href="https://github.com/briankebabe" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/brian-mirieri-1a5930280/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="support" class="support">
-      <div class="container">
-        <h2>Keep Pesapad free – for everyone</h2>
-        <p class="section-subtitle">
+        <h2 class="text-2xl font-bold mb-2">Keep Pesapad Free</h2>
+        <p class="text-stone-400 text-sm mb-6">
           Your voluntary support helps maintain servers and add new features.
         </p>
 
-        <!-- Traditional donation methods -->
-        <div class="donation-grid">
+        <div class="grid grid-cols-2 gap-3 mb-6">
           <a
             href="https://buymeacoffee.com/pesapad"
             target="_blank"
@@ -194,7 +108,7 @@
           >
             <i class="fas fa-coffee"></i>
             <h3>Buy Me a Coffee</h3>
-            <p>One‑time or monthly (M‑PESA accepted)</p>
+            <p>One‑time or monthly</p>
           </a>
           <a
             href="https://ko-fi.com/pesapad"
@@ -203,7 +117,7 @@
           >
             <i class="fab fa-kickstarter-k"></i>
             <h3>Ko-fi</h3>
-            <p>0% fees, one‑time or memberships</p>
+            <p>0% fees</p>
           </a>
           <a
             href="https://paypal.me/pesapad"
@@ -212,7 +126,7 @@
           >
             <i class="fab fa-paypal"></i>
             <h3>PayPal</h3>
-            <p>Send to @pesapad</p>
+            <p>@pesapad</p>
           </a>
           <a
             href="https://github.com/sponsors/pesapad"
@@ -221,148 +135,1481 @@
           >
             <i class="fab fa-github"></i>
             <h3>GitHub Sponsors</h3>
-            <p>Support open‑source development</p>
+            <p>Open‑source</p>
           </a>
         </div>
 
-        <!-- Cryptocurrency donations -->
-        <div class="crypto-section" id="crypto">
-          <div class="crypto-header">
-            <i class="fas fa-coins"></i>
-            <h3>Cryptocurrency Donations</h3>
-            <p>
-              Send crypto directly to support Pesapad – copy any address below.
+        <h3
+          class="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-3"
+        >
+          Cryptocurrency
+        </h3>
+        <div class="space-y-2">
+          <div class="crypto-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium">Bitcoin (BTC)</span>
+            </div>
+            <div class="address-row">
+              <code id="btc-address"
+                >bc1q2v229l0pj0auskul9yf78vq5p2tmlv75x89j8s</code
+              >
+              <button onclick="copyToClipboard('btc-address')" class="copy-btn">
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="crypto-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium">Ethereum (ETH)</span>
+            </div>
+            <div class="address-row">
+              <code id="eth-address"
+                >0x7d7433768c74e742ea6c5118ff38b5caa945fb29</code
+              >
+              <button onclick="copyToClipboard('eth-address')" class="copy-btn">
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="crypto-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium">Solana (SOL)</span>
+            </div>
+            <div class="address-row">
+              <code id="sol-address"
+                >Z2UnnWt9oaM1AqDwksi5WrYwMgJxwfBcDpMWY8Sh5HJ</code
+              >
+              <button onclick="copyToClipboard('sol-address')" class="copy-btn">
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="crypto-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium">Dogecoin (DOGE)</span>
+            </div>
+            <div class="address-row">
+              <code id="doge-address">DRVoAYndbsXi9kY2L2Hc9tmCuJ8eG1hFJE</code>
+              <button
+                onclick="copyToClipboard('doge-address')"
+                class="copy-btn"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-stone-500 mt-3 text-center">
+          Only send the respective cryptocurrency to each address.
+        </p>
+      </div>
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-stone-950/90 backdrop-blur border-b border-amber-500/20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <a href="#hero" class="flex items-center gap-2 group">
+            <img
+              src="assets/images/pesapad_logo_padded.png"
+              alt="Pesapad"
+              class="logo-img"
+            />
+            <span class="text-xl font-bold text-white"
+              >Pesa<span class="text-amber-400">pad</span></span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="#features"
+              class="text-sm font-medium text-stone-300 hover:text-white transition-colors"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-sm font-medium text-stone-300 hover:text-white transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="#trust-ranking"
+              class="text-sm font-medium text-stone-300 hover:text-white transition-colors"
+              >Trust Ranking</a
+            >
+            <a
+              href="#faq"
+              class="text-sm font-medium text-stone-300 hover:text-white transition-colors"
+              >FAQ</a
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              onclick="openSupportModal()"
+              class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-sm font-semibold rounded-xl transition-all duration-200 border border-amber-500/30"
+            >
+              <i class="fas fa-heart"></i> Support
+            </button>
+            <a
+              href="#download"
+              class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-amber-800 hover:bg-amber-600 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
+            >
+              <i class="fas fa-download"></i> Get Free
+            </a>
+            <button
+              id="mobile-menu-btn"
+              class="md:hidden p-2 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Open menu"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-stone-900 border-t border-amber-500/20"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="#features"
+            class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+            >Features</a
+          >
+          <a
+            href="#how-it-works"
+            class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+            >How It Works</a
+          >
+          <a
+            href="#trust-ranking"
+            class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+            >Trust Ranking</a
+          >
+          <a
+            href="#faq"
+            class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+            >FAQ</a
+          >
+          <button
+            onclick="
+              openSupportModal();
+              mobileMenu.classList.add('hidden');
+            "
+            class="block w-full text-left px-4 py-2.5 rounded-lg text-amber-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
+          >
+            <i class="fas fa-heart mr-2"></i>Support
+          </button>
+          <a
+            href="#download"
+            class="block px-4 py-2.5 rounded-lg bg-amber-800 hover:bg-amber-600 text-white text-center text-sm font-semibold mt-2"
+            >Get Free</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section
+      id="hero"
+      class="hero-gradient relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/4 -left-20 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 -right-20 w-96 h-96 bg-stone-700/20 rounded-full blur-3xl animate-float-delayed"
+        ></div>
+        <div
+          class="absolute inset-0 opacity-[0.03]"
+          style="
+            background-image:
+              linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px
+              );
+            background-size: 60px 60px;
+          "
+        ></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-8 py-11 lg:px-14 w-full">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="text-center lg:text-left space-y-6 lg:space-y-8">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-semibold text-amber-300 tracking-wide uppercase animate-slide-up"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"
+                ></span>
+              </span>
+              100% Free • Works Offline
+            </div>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] tracking-tight animate-slide-up"
+              style="animation-delay: 0.1s"
+            >
+              Know your<br />
+              <span class="gradient-text">numbers</span>
+            </h1>
+            <p
+              class="text-lg sm:text-xl text-stone-300 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slide-up"
+              style="animation-delay: 0.2s"
+            >
+              Track customers who owe you, manage supplier payments, and get
+              trust rankings — all offline, no fees, with optional ads you
+              control. Works in any currency.
             </p>
-          </div>
-          <div class="crypto-grid">
-            <!-- Bitcoin -->
-            <div class="crypto-card">
-              <div class="crypto-icon">
-                <img
-                  src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg"
-                  alt="Bitcoin"
-                  width="32"
-                  height="32"
-                  onerror="this.style.display = 'none'"
-                />
-                <span>Bitcoin (BTC)</span>
-              </div>
-              <div class="address-row">
-                <code id="btc-address">bc1q2v229l0pj0auskul9yf78vq5p2tmlv75x89j8s</code>
-                <button
-                  onclick="copyToClipboard('btc-address')"
-                  class="copy-btn"
+            <div
+              class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-slide-up"
+              style="animation-delay: 0.3s"
+            >
+              <a
+                href="#download"
+                class="group relative inline-flex items-center gap-2.5 px-8 py-4 bg-amber-800 hover:bg-amber-600 text-white font-bold rounded-2xl text-base transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40"
+              >
+                <i class="fas fa-download"></i> Download Free
+                <span
+                  class="absolute -top-2 -right-2 px-2 py-0.5 bg-amber-300 text-stone-900 text-[10px] font-bold rounded-full shadow-lg"
+                  >FREE</span
                 >
-                  Copy
-                </button>
-              </div>
+              </a>
+              <button
+                onclick="
+                  document
+                    .getElementById('how-it-works')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                class="inline-flex items-center gap-2 px-6 py-4 text-stone-300 hover:text-white font-semibold rounded-2xl text-base transition-all duration-200 hover:bg-white/5"
+              >
+                <i class="fas fa-play-circle"></i> See How It Works
+              </button>
             </div>
-            <!-- Ethereum -->
-            <div class="crypto-card">
-              <div class="crypto-icon">
-                <img
-                  src="https://cryptologos.cc/logos/ethereum-eth-logo.svg"
-                  alt="Ethereum"
-                  width="32"
-                  height="32"
-                  onerror="this.style.display = 'none'"
-                />
-                <span>Ethereum (ETH)</span>
-              </div>
-              <div class="address-row">
-                <code id="eth-address">0x7d7433768c74e742ea6c5118ff38b5caa945fb29</code>
-                <button
-                  onclick="copyToClipboard('eth-address')"
-                  class="copy-btn"
+            <div
+              class="flex items-center gap-4 justify-center lg:justify-start animate-slide-up"
+              style="animation-delay: 0.4s"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="w-8 h-8 rounded-full border-2 border-stone-900 bg-customer-500 flex items-center justify-center text-[10px] font-bold text-white"
                 >
-                  Copy
-                </button>
+                  2K+
+                </div>
               </div>
-            </div>
-            <!-- Solana -->
-            <div class="crypto-card">
-              <div class="crypto-icon">
-                <img
-                  src="https://cryptologos.cc/logos/solana-sol-logo.svg"
-                  alt="Solana"
-                  width="32"
-                  height="32"
-                  onerror="this.style.display = 'none'"
-                />
-                <span>Solana (SOL)</span>
-              </div>
-              <div class="address-row">
-                <code id="sol-address">Z2UnnWt9oaM1AqDwksi5WrYwMgJxwfBcDpMWY8Sh5HJ</code>
-                <button
-                  onclick="copyToClipboard('sol-address')"
-                  class="copy-btn"
-                >
-                  Copy
-                </button>
-              </div>
-            </div>
-            <!-- Dogecoin -->
-            <div class="crypto-card">
-              <div class="crypto-icon">
-                <img
-                  src="https://cryptologos.cc/logos/dogecoin-doge-logo.svg"
-                  alt="Dogecoin"
-                  width="32"
-                  height="32"
-                  onerror="this.style.display = 'none'"
-                />
-                <span>Dogecoin (DOGE)</span>
-              </div>
-              <div class="address-row">
-                <code id="doge-address">DRVoAYndbsXi9kY2L2Hc9tmCuJ8eG1hFJE</code>
-                <button
-                  onclick="copyToClipboard('doge-address')"
-                  class="copy-btn"
-                >
-                  Copy
-                </button>
+              <div class="text-left">
+                <div class="flex items-center gap-1">
+                  <i class="fas fa-star text-amber-400"></i>
+                  <i class="fas fa-star text-amber-400"></i>
+                  <i class="fas fa-star text-amber-400"></i>
+                  <i class="fas fa-star text-amber-400"></i>
+                  <i class="fas fa-star text-amber-400"></i>
+                </div>
+                <p class="text-xs text-stone-400 mt-0.5">
+                  Trusted by 2,000+ businesses
+                </p>
               </div>
             </div>
           </div>
-          <p class="crypto-note">
-            Only send the respective cryptocurrency to each address.
-            Double‑check the network.
+          <div class="relative flex justify-center lg:justify-center">
+            <!-- Hero Carousel -->
+            <div id="heroCarousel" class="relative w-[280px] sm:w-[300px]">
+              <div class="phone-mockup animate-float">
+                <div
+                  class="phone-screen bg-stone-900 aspect-[9/18] overflow-hidden"
+                >
+                  <div class="carousel-slide-hero active">
+                    <img
+                      src="assets/images/home_page.jpg"
+                      alt="Pesapad Dashboard"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="carousel-slide-hero">
+                    <img
+                      src="assets/images/bills_page.jpg"
+                      alt="Bills View"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.src =
+                          'https://via.placeholder.com/300x600/2c3e50/ffffff?text=Bills'
+                      "
+                    />
+                  </div>
+                  <div class="carousel-slide-hero">
+                    <img
+                      src="assets/images/lock_screen.jpg"
+                      alt="Trust Ranking"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.src =
+                          'https://via.placeholder.com/300x600/2c3e50/ffffff?text=Ranking'
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            <!-- Floating badges – top right & bottom left -->
+            <div
+              class="absolute -top-2 -right-2 sm:right-0 glass rounded-2xl px-3 py-2 animate-float-delayed"
+            >
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center"
+                >
+                  <i class="fas fa-wifi text-amber-400 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-white">Offline Ready</p>
+                  <p class="text-[9px] text-stone-400">No internet needed</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -bottom-2 -left-2 sm:left-0 glass rounded-2xl px-3 py-2 animate-float"
+            >
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center"
+                >
+                  <i class="fas fa-cloud-upload-alt text-amber-400 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-white">Cloud Backup</p>
+                  <p class="text-[9px] text-stone-400">Sync when online</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-stone-500"></i>
+      </div>
+    </section>
+
+    <!-- ====== CURRENCIES ====== -->
+    <section class="relative bg-stone-900 border-y border-white/5 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p
+          class="text-center text-xs font-semibold text-stone-500 uppercase tracking-widest mb-6"
+        >
+          Works with any currency, anywhere in the world
+        </p>
+        <div
+          class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-stone-400"
+        >
+          <div class="flex items-center gap-2 text-sm font-medium">🇰🇪 KES</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇳🇬 NGN</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇺🇬 UGX</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇬🇭 GHS</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇿🇦 ZAR</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇺🇸 USD</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇬🇧 GBP</div>
+          <div class="flex items-center gap-2 text-sm font-medium">🇪🇺 EUR</div>
+          <div class="flex items-center gap-2 text-sm font-medium">
+            🌍 +100 more
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FEATURES ====== -->
+    <section id="features" class="relative bg-stone-950 py-20 sm:py-28">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4"
+          >
+            <i class="fas fa-bolt"></i> Core Features
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-white"
+          >
+            Everything you need.<br />
+            <span class="text-stone-400">For customers &amp; suppliers.</span>
+          </h2>
+          <p class="text-stone-400 text-lg">
+            No bloated features. Just the tools your business actually needs.
           </p>
         </div>
-
-        <p class="support-note">
-          💚 All donations go directly to server costs, app store fees, and
-          feature development.
-        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Customer feature -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-customer-500/10 flex items-center justify-center mb-5 group-hover:bg-customer-500/20 transition-colors"
+            >
+              <i class="fas fa-user text-customer-500 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">
+              Track Customer Debts
+            </h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              See who owes you, how much, and when it's due. Get reminders
+              before payments are late.
+            </p>
+          </div>
+          <!-- Supplier feature -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-supplier-500/10 flex items-center justify-center mb-5 group-hover:bg-supplier-500/20 transition-colors"
+            >
+              <i class="fas fa-truck text-supplier-500 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">
+              Manage Supplier Payments
+            </h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              Keep track of what you owe suppliers. Never miss a payment or
+              damage a relationship.
+            </p>
+          </div>
+          <!-- Trust ranking (amber accent) -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-5 group-hover:bg-amber-500/20 transition-colors"
+            >
+              <i class="fas fa-shield-alt text-amber-400 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">Trust Rankings</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              Auto‑scored based on payment history. See who to trust before
+              extending credit.
+            </p>
+          </div>
+          <!-- Offline -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-slate-500/10 flex items-center justify-center mb-5 group-hover:bg-slate-500/20 transition-colors"
+            >
+              <i class="fas fa-wifi text-slate-400 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">
+              Works 100% Offline
+            </h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              No internet? No problem. Pesapad works without data. Your records
+              are always with you.
+            </p>
+          </div>
+          <!-- Free -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-rose-500/10 flex items-center justify-center mb-5 group-hover:bg-rose-500/20 transition-colors"
+            >
+              <i class="fas fa-ban text-rose-400 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">No Monthly Fees</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              Zero subscriptions. Zero hidden costs. Pesapad is free, forever.
+            </p>
+          </div>
+          <!-- Optional ads -->
+          <div
+            class="feature-card bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8 scroll-reveal"
+          >
+            <div
+              class="w-12 h-12 rounded-2xl bg-teal-500/10 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors"
+            >
+              <i class="fas fa-toggle-on text-teal-400 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">
+              Optional Ads You Control
+            </h3>
+            <p class="text-stone-400 text-sm leading-relaxed">
+              Ads are optional and you choose to see them. Turn them off
+              anytime. No interruptions.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="download" class="download mx-4 md:mx-0">
-      <div class="container">
-        <h2>Get Pesapad now</h2>
-        <p>Free, safe, and ready to use.</p>
-        <a
-          href="https://drive.google.com/file/d/1gPqZBezWAuFTb-Y3ZMQLE7LPcKbcae-p/view?usp=sharing"
-          target="_blank"
-          class="btn-download"
-          ><i class="fas fa-download"></i> Download APK (Android)</a
+    <!-- ====== HOW IT WORKS (Carousel) ====== -->
+    <section
+      id="how-it-works"
+      class="relative bg-stone-900 py-20 sm:py-28 overflow-hidden"
+    >
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4 scroll-reveal"
         >
-        <p class="download-note">
-          No fees. Optional ads. Just download, sign up and start tracking.
-          <br />Give it a try. It helps!
+          <i class="fas fa-magic"></i> Simple Setup
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl font-black tracking-tight mb-4 scroll-reveal text-white"
+        >
+          Start in 3 steps. <span class="text-stone-400">Takes 2 minutes.</span>
+        </h2>
+        <p class="text-stone-400 text-lg max-w-2xl mx-auto scroll-reveal">
+          No sign-ups. No tutorials needed. Just open the app and start
+          tracking.
         </p>
+        <div class="relative mt-12 overflow-hidden">
+          <div id="howItWorksCarousel" class="relative">
+            <!-- Customer slide -->
+            <div class="carousel-slide active">
+              <div class="grid sm:grid-cols-3 gap-6 text-left">
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-customer-500/20 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
+                  >
+                    1
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Add Customers
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    Enter names and phone numbers. That's it. No forms.
+                  </p>
+                </div>
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-customer-500/20 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
+                  >
+                    2
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Record Debts
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    Log what they borrowed. Pesapad tracks their payments and reminders sent.
+                  </p>
+                </div>
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-amber-500/20 flex items-center justify-center text-2xl font-black text-amber-400 mb-4"
+                  >
+                    3
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Know Who to Trust
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    See trust rankings and payment reminders. Make smarter
+                    decisions.
+                  </p>
+                </div>
+              </div>
+              <p class="text-xs text-stone-500 mt-4">
+                For Customers – track who owes you
+              </p>
+            </div>
+            <!-- Supplier slide -->
+            <div class="carousel-slide">
+              <div class="grid sm:grid-cols-3 gap-6 text-left">
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-supplier-500/20 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
+                  >
+                    1
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Add Suppliers
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    Enter your suppliers' details.
+                  </p>
+                </div>
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-supplier-500/20 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
+                  >
+                    2
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Record Payments Due
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    Log what you borrowed. Pesapad tracks your payments and promises sent.
+                  </p>
+                </div>
+                <div
+                  class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-amber-500/20 flex items-center justify-center text-2xl font-black text-amber-400 mb-4"
+                  >
+                    3
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 text-white">
+                    Build Supplier Trust
+                  </h3>
+                  <p class="text-stone-400 text-sm">
+                    Show suppliers you're reliable. Get better terms.
+                  </p>
+                </div>
+              </div>
+              <p class="text-xs text-stone-500 mt-4">
+                For Suppliers – track what you owe
+              </p>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2 mt-6">
+            <span
+              class="carousel-dot active"
+              data-carousel="howItWorksCarousel"
+              data-index="0"
+            ></span>
+            <span
+              class="carousel-dot"
+              data-carousel="howItWorksCarousel"
+              data-index="1"
+            ></span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <p>© <span id="currentYear"></span> Pesapad – Created by Brian Kebabe.</p>
-      <div class="footer-links">
-        <a href="https://briankebabe.github.io">Developer</a>
-        <a href="privacy.html" target="_blank">Privacy</a>
-        <a href="terms.html" target="_blank">Terms</a>
-        <a href="mailto:pesapad.app@gmail.com">Contact</a>
+    <!-- ====== TRUST RANKING (Carousel) ====== -->
+    <section id="trust-ranking" class="relative bg-stone-950 py-20 sm:py-28">
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative">
+          <div id="trustCarousel" class="relative">
+            <!-- Customer slide -->
+            <div class="carousel-slide active">
+              <div class="text-center mb-8">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-customer-500/10 border border-customer-500/20 text-customer-400 text-xs font-semibold tracking-wide uppercase mb-4"
+                >
+                  Customers
+                </div>
+                <h2
+                  class="text-3xl sm:text-4xl font-black tracking-tight text-white"
+                >
+                  Know who to <span class="gradient-text">trust</span> before
+                  you lend.
+                </h2>
+                <p class="text-stone-400 text-lg mt-2">
+                  Auto‑calculated scores based on payment history. No guessing.
+                </p>
+              </div>
+              <div
+                class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
+              >
+                <div class="flex items-center gap-2 mb-4">
+                  <i class="fas fa-user text-customer-400"></i>
+                  <h3 class="text-xl font-bold text-white">Customer Trust</h3>
+                </div>
+                <div class="space-y-4">
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white">Fatima Ali</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >12 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        ><i class="fas fa-shield-alt"></i> High Trust</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-customer-500"
+                        style="width: 92%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 92/100 • Pays on time
+                    </p>
+                  </div>
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white">John Otieno</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >8 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        ><i class="fas fa-exclamation-circle"></i> Medium
+                        Trust</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-customer-400"
+                        style="width: 58%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 58/100 • Sometimes late
+                    </p>
+                  </div>
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white"
+                          >Peter Kimani</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >5 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold"
+                        ><i class="fas fa-exclamation-triangle"></i> Low
+                        Trust</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-red-500"
+                        style="width: 24%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 24/100 • Frequently late
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Supplier slide -->
+            <div class="carousel-slide">
+              <div class="text-center mb-8">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-supplier-500/10 border border-supplier-500/20 text-supplier-400 text-xs font-semibold tracking-wide uppercase mb-4"
+                >
+                  Suppliers
+                </div>
+                <h2
+                  class="text-3xl sm:text-4xl font-black tracking-tight text-white"
+                >
+                  Know how much <span class="gradient-text">trust</span> you
+                  have with suppliers.
+                </h2>
+                <p class="text-stone-400 text-lg mt-2">
+                  See which suppliers trust you most based on your payment
+                  history.
+                </p>
+              </div>
+              <div
+                class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
+              >
+                <div class="flex items-center gap-2 mb-4">
+                  <i class="fas fa-truck text-supplier-400"></i>
+                  <h3 class="text-xl font-bold text-white">Supplier Trust</h3>
+                </div>
+                <div class="space-y-4">
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white"
+                          >Mombasa Distributors</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >15 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        ><i class="fas fa-check-circle"></i> Trust You</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-customer-500"
+                        style="width: 95%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 95/100 • You pay on time
+                    </p>
+                  </div>
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white"
+                          >Kampala Supplies</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >6 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        ><i class="fas fa-clock"></i> Building Trust</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-customer-400"
+                        style="width: 65%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 65/100 • Occasionally late
+                    </p>
+                  </div>
+                  <div class="bg-white/[0.03] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <div>
+                        <span class="font-semibold text-white"
+                          >Nairobi Hardware</span
+                        ><span class="text-stone-500 text-sm ml-3"
+                          >4 bills</span
+                        >
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold"
+                        ><i class="fas fa-exclamation-triangle"></i> Need
+                        Work</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-white/10 rounded-full h-2 overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-red-500"
+                        style="width: 35%"
+                      ></div>
+                    </div>
+                    <p class="text-xs text-stone-500 mt-1">
+                      Trust Score: 35/100 • Improve payment record
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2 mt-6">
+            <span
+              class="carousel-dot active"
+              data-carousel="trustCarousel"
+              data-index="0"
+            ></span>
+            <span
+              class="carousel-dot"
+              data-carousel="trustCarousel"
+              data-index="1"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHY FREE ====== -->
+    <section class="relative bg-stone-900 py-20 sm:py-28 overflow-hidden">
+      <div
+        class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4"
+        >
+          <i class="fas fa-heart"></i> Honest Business Model
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-6 text-white"
+        >
+          Why is it <span class="gradient-text">free?</span>
+        </h2>
+        <p
+          class="text-stone-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto"
+        >
+          We believe small businesses deserve good tools without going broke.
+          Pesapad is funded by
+          <strong class="text-white">optional, user-controlled ads</strong> and
+          <strong class="text-white">voluntary donations</strong> — not by
+          selling your data or trapping you in subscriptions.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6 text-left">
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+          >
+            <div class="flex items-center gap-3 mb-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"
+              >
+                <i class="fas fa-times text-red-400"></i>
+              </div>
+              <h3 class="font-bold text-white">What we DON'T do</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-stone-400">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-times text-red-500 w-3.5"></i> Sell your data
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-times text-red-500 w-3.5"></i> Charge monthly
+                fees
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-times text-red-500 w-3.5"></i> Lock features
+                behind paywalls
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-times text-red-500 w-3.5"></i> Force ads on you
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
+          >
+            <div class="flex items-center gap-3 mb-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center"
+              >
+                <i class="fas fa-check text-amber-400"></i>
+              </div>
+              <h3 class="font-bold text-white">What we DO</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-stone-400">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-amber-500 w-3.5"></i> Keep your data
+                private (cloud sync available)
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-amber-500 w-3.5"></i> Give all
+                features for free
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-amber-500 w-3.5"></i> Let you choose
+                if you see ads
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-amber-500 w-3.5"></i> Work 100%
+                offline
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS ====== -->
+    <section class="relative bg-stone-950 py-16 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center scroll-reveal"
+        >
+          <div>
+            <p class="text-3xl sm:text-4xl font-black gradient-text">2,000+</p>
+            <p class="text-sm text-stone-400 mt-1">Businesses</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-black gradient-text">100+</p>
+            <p class="text-sm text-stone-400 mt-1">Currencies</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-black gradient-text">$0</p>
+            <p class="text-sm text-stone-400 mt-1">Monthly Cost</p>
+          </div>
+          <div>
+            <p class="text-3xl sm:text-4xl font-black gradient-text">0</p>
+            <p class="text-sm text-stone-400 mt-1">Data Sold</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="relative bg-stone-950 py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 scroll-reveal">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4"
+          >
+            <i class="fas fa-comment-dots"></i> Real Stories
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Loved by small business owners
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+            </div>
+            <p class="text-stone-300 text-sm leading-relaxed mb-5">
+              "Before Pesapad, I used notebooks. Now I know exactly who to trust
+              with credit. My bad debts dropped by 70% in just one month."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-customer-500 flex items-center justify-center text-white font-bold text-sm"
+              >
+                AW
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">Amina Wanjiru</p>
+                <p class="text-xs text-stone-500">
+                  Grocery Shop Owner, Nairobi
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+            </div>
+            <p class="text-stone-300 text-sm leading-relaxed mb-5">
+              "The offline feature is a game changer. My area has spotty
+              internet, but Pesapad never lets me down. And it's actually free —
+              no tricks."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-supplier-500 flex items-center justify-center text-white font-bold text-sm"
+              >
+                DM
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">David Mensah</p>
+                <p class="text-xs text-stone-500">Hardware Store, Accra</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+              <i class="fas fa-star text-amber-400"></i>
+            </div>
+            <p class="text-stone-300 text-sm leading-relaxed mb-5">
+              "Trust rankings changed how I do business. I can see at a glance
+              who's reliable and who needs a follow-up. Worth every second — and
+              it costs nothing!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-stone-900 font-bold text-sm"
+              >
+                GO
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">Grace Okonkwo</p>
+                <p class="text-xs text-stone-500">Fabric Trader, Lagos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section id="faq" class="relative bg-stone-900 py-20 sm:py-28">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 scroll-reveal">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4"
+          >
+            <i class="fas fa-question-circle"></i> FAQ
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Common questions
+          </h2>
+        </div>
+        <div class="space-y-3 scroll-reveal">
+          <!-- FAQ items (content unchanged) -->
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >Is Pesapad really free?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Yes, 100%. There are no monthly fees, no premium plans, no
+                hidden costs. Pesapad is funded by optional, user-controlled ads
+                and voluntary donations. You can turn ads off anytime.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >Does it work without internet?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Absolutely. Pesapad works completely offline. All your data is
+                stored on your device and backed up to the cloud when you're
+                online.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >Does it track both customers and suppliers?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Yes! Pesapad has separate tabs for customers (who owe you) and
+                suppliers (who you owe). You get trust rankings for both sides.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >What currencies does it support?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Pesapad supports any currency in the world. KES, NGN, UGX, GHS,
+                ZAR, USD, EUR, GBP — and over 100 more. You choose your currency
+                when you set up the app.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >How does the trust ranking work?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Pesapad automatically calculates a trust score (0-100) for each
+                customer and supplier based on payment history. High scores =
+                reliable. Low scores = need caution.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+            >
+              <span class="font-semibold text-sm sm:text-base pr-4 text-white"
+                >Is my data backed up to the cloud?</span
+              >
+              <i
+                class="fas fa-plus text-stone-400 transition-transform duration-300 faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-sm text-stone-400 leading-relaxed">
+                Yes, your data is automatically backed up to the cloud (via
+                Supabase) when you're online. This allows you to sync across
+                devices. Your data is never shared or sold.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DOWNLOAD CTA ====== -->
+    <section
+      id="download"
+      class="relative bg-stone-950 py-20 sm:py-28 overflow-hidden"
+    >
+      <div
+        class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal"
+      >
+        <div class="glass rounded-3xl p-8 sm:p-12 lg:p-16">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide uppercase mb-6"
+          >
+            <i class="fas fa-download"></i> Get Started Free
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-white"
+          >
+            Ready to know<br />your <span class="gradient-text">numbers</span>?
+          </h2>
+          <p class="text-stone-400 text-lg max-w-xl mx-auto mb-8">
+            Download Pesapad now. Free forever. No sign-up required. Works
+            offline on any Android device.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="#"
+              class="hidden group inline-flex items-center gap-3 px-8 py-4 bg-white text-stone-900 font-bold rounded-2xl transition-all duration-300 hover:bg-stone-100 hover:-translate-y-1 shadow-xl hover:shadow-2xl"
+            >
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.284l2.71-2.712 5.09 2.947a1 1 0 010 1.734l-5.09 2.947-2.71-2.712zm-1.414 1.414L3.61 22.186l10.027-5.79 2.72-2.722-2.352-2.352z"
+                />
+                <path
+                  d="M14.5 11.1l-2.7-2.7L3.6 1.8l-.1-.1a1 1 0 011.2-.1l12.1 7.01-2.3 2.49z"
+                  opacity=".1"
+                />
+                <path d="M3.6 22.2l.1.1a1 1 0 01-1.2-.1" opacity=".1" />
+              </svg>
+              <div class="text-left">
+                <p class="text-[10px] font-medium leading-none opacity-60">
+                  GET IT ON
+                </p>
+                <p class="text-base font-bold leading-tight">Google Play</p>
+              </div>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1gPqZBezWAuFTb-Y3ZMQLE7LPcKbcae-p/view?usp=sharing"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-amber-800 hover:bg-amber-600 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-amber-500/40 hover:shadow-amber-600/60 hover:-translate-y-1"
+            >
+              <i class="fas fa-file-download"></i> Download APK
+            </a>
+          </div>
+          <p class="text-xs text-stone-500 mt-6">
+            <i class="fas fa-shield-alt text-amber-400"></i>
+            No account needed • Cloud backup • Works offline
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-stone-950 border-t border-white/5 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div class="sm:col-span-2 lg:col-span-1">
+            <a href="#hero" class="flex items-center gap-2 mb-4">
+              <img
+                src="assets/images/pesapad_logo_padded.png"
+                alt="Pesapad"
+                class="w-9 h-9 rounded-xl border-2 border-amber-500/30 shadow-lg shadow-amber-500/20"
+              />
+              <span class="text-xl font-bold text-white"
+                >Pesa<span class="text-amber-400">pad</span></span
+              >
+            </a>
+            <p class="text-sm text-stone-400 leading-relaxed max-w-xs">
+              Free offline bill tracker for small businesses. Know your numbers,
+              trust your customers and suppliers.
+            </p>
+          </div>
+          <div>
+            <h4
+              class="text-sm font-bold text-white mb-4 uppercase tracking-wider"
+            >
+              Product
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#features"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#trust-ranking"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Trust Ranking</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#download"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Download</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="text-sm font-bold text-white mb-4 uppercase tracking-wider"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="#faq"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:pesapad.app@gmail.com"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy.html"
+                  target="_blank"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  target="_blank"
+                  class="text-sm text-stone-400 hover:text-white transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="text-sm font-bold text-white mb-4 uppercase tracking-wider"
+            >
+              Community
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="https://twitter.com/pesapad"
+                  target="_blank"
+                  class="text-sm text-stone-400 hover:text-white transition-colors flex items-center gap-2"
+                  ><i class="fab fa-twitter"></i> Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/briankebabe"
+                  target="_blank"
+                  class="text-sm text-stone-400 hover:text-white transition-colors flex items-center gap-2"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-sm text-stone-400 hover:text-white transition-colors flex items-center gap-2"
+                  ><i class="fab fa-whatsapp"></i> WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/brian-mirieri-1a5930280/"
+                  target="_blank"
+                  class="text-sm text-stone-400 hover:text-white transition-colors flex items-center gap-2"
+                  ><i class="fab fa-linkedin"></i> LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/5 pt-8">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
+            <p class="text-xs text-stone-500">
+              © <span id="currentYear"></span> Pesapad. Know your numbers.
+            </p>
+            <div class="flex items-center gap-1.5 text-xs text-stone-500">
+              <i class="fas fa-expand-arrows-alt"></i> Fully responsive – works
+              on all screen sizes
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 p-4 rounded bg-amber-800 hover:bg-amber-600 text-white shadow-lg transition-all duration-300 opacity-0 invisible hover:scale-105"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="main.js"></script>
   </body>

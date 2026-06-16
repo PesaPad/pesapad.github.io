@@ -2,124 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pesapad – Privacy Policy</title>
-  <meta name="description" content="Pesapad privacy policy: how we collect, use, and protect your data. 100% transparent.">
   <link rel="icon" type="image/png" href="assets/images/pesapad_logo_padded.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f1f5f9',
+              100: '#e2e8f0',
+              200: '#cbd5e1',
+              300: '#94a3b8',
+              400: '#64748b',
+              500: '#475569',
+              600: '#334155',
+              700: '#1e293b',
+              800: '#0f172a',
+              900: '#0a0f1e',
+            },
+            accent: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+            },
+            customer: { 500: '#2E7D32' },
+            supplier: { 500: '#FF695F' },
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              500: '#78716c',
+              600: '#57534e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+              950: '#0c0a09',
+            }
+          },
+          fontFamily: {
+            display: ['Inter', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* additional legal page fine-tuning */
+    /* legal page specific */
     .legal-content {
       max-width: 880px;
-      margin-left: auto;
-      margin-right: auto;
-      background: white;
-      border-radius: 32px;
-      padding: 2rem 2rem 3rem;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      margin: 0 auto;
+      background: #1c1917;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     .legal-content h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--pesapad);
-      border-left: 6px solid var(--accent);
-      padding-left: 1.2rem;
+      color: #f59e0b;
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
       margin-bottom: 1.5rem;
-      margin-top: 0.5rem;
     }
     .legal-content h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 600;
-      margin: 2rem 0 1rem 0;
-      color: #1e293b;
-      text-align: left;
+      color: #e5e7eb;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
     }
-    .legal-content h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-      color: #2c3e50;
-    }
-    .legal-content p {
-      margin-bottom: 1rem;
+    .legal-content p, .legal-content li {
+      color: #a8a29e;
       line-height: 1.6;
-      color: #1f2937;
+    }
+    .legal-content a {
+      color: #f59e0b;
+      text-decoration: underline;
+    }
+    .legal-content .effective-date {
+      background: #292524;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #a8a29e;
+      margin-bottom: 1rem;
     }
     .legal-content ul, .legal-content ol {
       margin: 1rem 0 1.2rem 1.8rem;
-    }
-    .legal-content li {
-      margin: 0.5rem 0;
-      line-height: 1.6;
-    }
-    .legal-content strong {
-      color: #0f2b3d;
     }
     .legal-content hr {
       margin: 2rem 0;
       border: 0;
       height: 1px;
-      background: #e2e8f0;
+      background: #44403c;
     }
-    .legal-content a {
-      color: var(--accent);
-      text-decoration: underline;
-      font-weight: 500;
+    .logo-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 2px solid rgba(245,158,11,0.3);
     }
-    .legal-content .effective-date {
-      background: #f1f5f9;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      display: inline-block;
-      font-size: 0.85rem;
-      margin-bottom: 1.5rem;
+    footer a {
+      color: #a8a29e;
+      transition: color 0.2s;
     }
-    @media (max-width: 768px) {
-      .legal-content {
-        padding: 1.5rem;
-      }
-      .legal-content h1 { font-size: 1.75rem; }
-      .legal-content h2 { font-size: 1.4rem; }
+    footer a:hover { color: white; }
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      background: rgba(12,10,9,0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
   </style>
 </head>
-<body>
-  <nav>
-    <div class="nav-container">
-      <a href="./index.html" class="logo">
-        <img src="assets/images/pesapad_logo_padded.png" alt="Pesapad" class="logo-img" onerror="this.src='https://via.placeholder.com/32'">
-        <span>Pesapad</span>
-      </a>
-      <div class="nav-links">
-        <a href="./index.html#features">Features</a>
-        <a href="./index.html#demo">Demo</a>
-        <a href="./index.html#creator">Creator</a>
-        <a href="./index.html#support">Support</a>
-        <a href="./index.html#download" class="download-btn-nav">Download Free</a>
+<body class="bg-stone-950 text-white">
+
+  <!-- ====== NAVBAR (same as main site) ====== -->
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="./index.html" class="flex items-center gap-2">
+          <img src="assets/images/pesapad_logo_padded.png" alt="Pesapad" class="logo-img">
+          <span class="text-xl font-bold text-white">Pesa<span class="text-accent-400">pad</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="./index.html#features" class="text-sm font-medium text-stone-300 hover:text-white transition-colors">Features</a>
+          <a href="./index.html#download" class="text-sm font-medium text-stone-300 hover:text-white transition-colors">Download</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors" aria-label="Open menu">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
       </div>
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="./index.html#features">Features</a>
-      <a href="./index.html#demo">Demo</a>
-      <a href="./index.html#creator">Creator</a>
-      <a href="./index.html#support">Support</a>
-      <a href="./index.html#download">Download</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-white/5">
+      <div class="px-4 py-4 space-y-2">
+        <a href="./index.html#features" class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Features</a>
+        <a href="./index.html#download" class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Download</a>
+      </div>
     </div>
   </nav>
 
-  <main style="padding: 60px 0 80px; background: #f8fafc;">
-    <div class="container">
+  <!-- ====== MAIN CONTENT ====== -->
+  <main style="padding: 100px 0 60px;">
+    <div class="container mx-auto px-4">
       <div class="legal-content">
         <h1>Privacy Policy</h1>
         <div class="effective-date">Effective as of 2026-05-26</div>
-        
+
         <p>This privacy policy applies to the Pesapad app for mobile devices, together with any related services operated by Brian Mirieri Kebabe (collectively, the "Application"). Brian Mirieri Kebabe is hereby referred to as the "Service Provider".</p>
 
         <h2>Information Collection and Use</h2>
@@ -195,14 +243,15 @@
         <h2>Contact Us</h2>
         <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a href="mailto:pesapad.app@gmail.com">pesapad.app@gmail.com</a>.</p>
         <hr />
-        <p style="font-size: 0.8rem; color: #6c757d;">This privacy policy page was originally generated by App Privacy Policy Generator and adapted for Pesapad.</p>
+        <p style="font-size:0.8rem; color: #6c757d;">This privacy policy page was originally generated by App Privacy Policy Generator and adapted for Pesapad.</p>
       </div>
     </div>
   </main>
 
-  <footer>
-    <p>© <span id="currentYear"></span> Pesapad – Created by Brian Kebabe.</p>
-    <div class="footer-links">
+  <!-- ====== FOOTER (same as main site) ====== -->
+  <footer class="bg-stone-950 border-t border-white/5 py-8 text-center">
+    <p class="text-xs text-stone-500">© <span id="currentYear"></span> Pesapad – Created by Brian Kebabe.</p>
+    <div class="flex justify-center gap-6 mt-2 text-xs">
       <a href="./index.html">Home</a>
       <a href="./privacy.html">Privacy</a>
       <a href="./terms.html">Terms</a>
@@ -210,21 +259,27 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
   <script>
-    // ensure mobile menu works also on this page, and year
     document.getElementById('currentYear').innerText = new Date().getFullYear();
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
     if (mobileBtn) {
       mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('hidden', !menuOpen);
+        mobileBtn.innerHTML = menuOpen
+          ? '<i class="fas fa-times text-xl"></i>'
+          : '<i class="fas fa-bars text-xl"></i>';
       });
     }
-    // close mobile menu on any anchor click
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
+    mobileMenu?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
+        menuOpen = false;
+        mobileMenu.classList.add('hidden');
+        if (mobileBtn) mobileBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
       });
     });
   </script>
