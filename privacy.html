@@ -14,45 +14,22 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#f1f5f9',
-              100: '#e2e8f0',
-              200: '#cbd5e1',
-              300: '#94a3b8',
-              400: '#64748b',
-              500: '#475569',
-              600: '#334155',
-              700: '#1e293b',
-              800: '#0f172a',
-              900: '#0a0f1e',
+            purple: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#5E35B1',
+              600: '#4527A0',
+              700: '#3B1F8A',
+              800: '#2E1573',
+              900: '#1E0A5C',
+              950: '#1a0533',
             },
-            accent: {
-              50: '#fffbeb',
-              100: '#fef3c7',
-              200: '#fde68a',
-              300: '#fcd34d',
-              400: '#fbbf24',
-              500: '#f59e0b',
-              600: '#d97706',
-              700: '#b45309',
-              800: '#92400e',
-              900: '#78350f',
-            },
+            highlight: { 500: '#F59E0B' },
             customer: { 500: '#2E7D32' },
             supplier: { 500: '#FF695F' },
-            stone: {
-              50: '#fafaf9',
-              100: '#f5f5f4',
-              200: '#e7e5e4',
-              300: '#d6d3d1',
-              400: '#a8a29e',
-              500: '#78716c',
-              600: '#57534e',
-              700: '#44403c',
-              800: '#292524',
-              900: '#1c1917',
-              950: '#0c0a09',
-            }
           },
           fontFamily: {
             display: ['Inter', 'system-ui', 'sans-serif'],
@@ -65,11 +42,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* legal page specific */
     .legal-content {
       max-width: 880px;
       margin: 0 auto;
-      background: #1c1917;
+      background: #2c0a4a;
       border-radius: 2rem;
       padding: 2rem;
       box-shadow: 0 12px 30px rgba(0,0,0,0.5);
@@ -78,8 +54,8 @@
     .legal-content h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: #f59e0b;
-      border-left: 4px solid #f59e0b;
+      color: #a78bfa;
+      border-left: 4px solid #5E35B1;
       padding-left: 1rem;
       margin-bottom: 1.5rem;
     }
@@ -91,20 +67,20 @@
       margin-bottom: 0.5rem;
     }
     .legal-content p, .legal-content li {
-      color: #a8a29e;
+      color: #c4b5fd;
       line-height: 1.6;
     }
     .legal-content a {
-      color: #f59e0b;
+      color: #a78bfa;
       text-decoration: underline;
     }
     .legal-content .effective-date {
-      background: #292524;
+      background: #1a0533;
       padding: 0.25rem 1rem;
       border-radius: 20px;
       display: inline-block;
       font-size: 0.85rem;
-      color: #a8a29e;
+      color: #a78bfa;
       margin-bottom: 1rem;
     }
     .legal-content ul, .legal-content ol {
@@ -114,49 +90,49 @@
       margin: 2rem 0;
       border: 0;
       height: 1px;
-      background: #44403c;
+      background: #5E35B1;
     }
     .logo-img {
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      border: 2px solid rgba(245,158,11,0.3);
+      border: 2px solid rgba(94,53,177,0.3);
     }
     footer a {
-      color: #a8a29e;
+      color: #a78bfa;
       transition: color 0.2s;
     }
     footer a:hover { color: white; }
     .nav-blur {
       backdrop-filter: blur(20px);
-      background: rgba(12,10,9,0.85);
+      background: rgba(26,5,51,0.85);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
   </style>
 </head>
-<body class="bg-stone-950 text-white">
+<body class="bg-purple-950 text-white">
 
-  <!-- ====== NAVBAR (same as main site) ====== -->
+  <!-- ====== NAVBAR ====== -->
   <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
         <a href="./index.html" class="flex items-center gap-2">
           <img src="assets/images/pesapad_logo_padded.png" alt="Pesapad" class="logo-img">
-          <span class="text-xl font-bold text-white">Pesa<span class="text-accent-400">pad</span></span>
+          <span class="text-xl font-bold text-white">Pesa<span class="text-purple-400">pad</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="./index.html#features" class="text-sm font-medium text-stone-300 hover:text-white transition-colors">Features</a>
-          <a href="./index.html#download" class="text-sm font-medium text-stone-300 hover:text-white transition-colors">Download</a>
+          <a href="./index.html#features" class="text-sm font-medium text-purple-200 hover:text-white transition-colors">Features</a>
+          <a href="./index.html#download" class="text-sm font-medium text-purple-200 hover:text-white transition-colors">Download</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors" aria-label="Open menu">
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-purple-200 hover:text-white hover:bg-white/10 transition-colors" aria-label="Open menu">
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-white/5">
+    <div id="mobile-menu" class="hidden md:hidden bg-purple-900 border-t border-purple-500/20">
       <div class="px-4 py-4 space-y-2">
-        <a href="./index.html#features" class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Features</a>
-        <a href="./index.html#download" class="block px-4 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Download</a>
+        <a href="./index.html#features" class="block px-4 py-2.5 rounded-lg text-purple-200 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Features</a>
+        <a href="./index.html#download" class="block px-4 py-2.5 rounded-lg text-purple-200 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium">Download</a>
       </div>
     </div>
   </nav>
@@ -243,14 +219,14 @@
         <h2>Contact Us</h2>
         <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a href="mailto:pesapad.app@gmail.com">pesapad.app@gmail.com</a>.</p>
         <hr />
-        <p style="font-size:0.8rem; color: #6c757d;">This privacy policy page was originally generated by App Privacy Policy Generator and adapted for Pesapad.</p>
+        <p style="font-size:0.8rem; color: #a78bfa;">This privacy policy page was originally generated by App Privacy Policy Generator and adapted for Pesapad.</p>
       </div>
     </div>
   </main>
 
-  <!-- ====== FOOTER (same as main site) ====== -->
-  <footer class="bg-stone-950 border-t border-white/5 py-8 text-center">
-    <p class="text-xs text-stone-500">© <span id="currentYear"></span> Pesapad – Created by Brian Kebabe.</p>
+  <!-- ====== FOOTER ====== -->
+  <footer class="bg-purple-950 border-t border-white/5 py-8 text-center">
+    <p class="text-xs text-purple-300">© <span id="currentYear"></span> Pesapad – Created by Brian Kebabe.</p>
     <div class="flex justify-center gap-6 mt-2 text-xs">
       <a href="./index.html">Home</a>
       <a href="./privacy.html">Privacy</a>
