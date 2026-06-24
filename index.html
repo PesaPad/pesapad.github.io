@@ -123,7 +123,7 @@
           <a
             href="https://buymeacoffee.com/pesapad"
             target="_blank"
-            class="donation-card"
+            class="donation-card donation-bmc"
           >
             <i class="fas fa-coffee"></i>
             <h3>Buy Me a Coffee</h3>
@@ -132,7 +132,7 @@
           <a
             href="https://ko-fi.com/pesapad"
             target="_blank"
-            class="donation-card"
+            class="donation-card donation-kofi"
           >
             <i class="fab fa-kickstarter-k"></i>
             <h3>Ko-fi</h3>
@@ -141,7 +141,7 @@
           <a
             href="https://paypal.me/pesapad"
             target="_blank"
-            class="donation-card"
+            class="donation-card donation-paypal"
           >
             <i class="fab fa-paypal"></i>
             <h3>PayPal</h3>
@@ -150,7 +150,7 @@
           <a
             href="https://github.com/sponsors/pesapad"
             target="_blank"
-            class="donation-card"
+            class="donation-card donation-github"
           >
             <i class="fab fa-github"></i>
             <h3>GitHub Sponsors</h3>
@@ -164,7 +164,7 @@
           Cryptocurrency
         </h3>
         <div class="space-y-2">
-          <div class="crypto-card">
+          <div class="crypto-card crypto-btc">
             <div class="flex items-center gap-2 mb-1">
               <span class="text-sm font-medium">Bitcoin (BTC)</span>
             </div>
@@ -177,7 +177,7 @@
               </button>
             </div>
           </div>
-          <div class="crypto-card">
+          <div class="crypto-card crypto-eth">
             <div class="flex items-center gap-2 mb-1">
               <span class="text-sm font-medium">Ethereum (ETH)</span>
             </div>
@@ -190,7 +190,7 @@
               </button>
             </div>
           </div>
-          <div class="crypto-card">
+          <div class="crypto-card crypto-sol">
             <div class="flex items-center gap-2 mb-1">
               <span class="text-sm font-medium">Solana (SOL)</span>
             </div>
@@ -203,7 +203,7 @@
               </button>
             </div>
           </div>
-          <div class="crypto-card">
+          <div class="crypto-card crypto-doge">
             <div class="flex items-center gap-2 mb-1">
               <span class="text-sm font-medium">Dogecoin (DOGE)</span>
             </div>
@@ -227,7 +227,7 @@
     <!-- ====== NAVBAR ====== -->
     <nav
       id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-purple-950/90 nav-blur border-b border-purple-500/20"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-purple-950/90 nav-blur border-b border-purple-500/30"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
@@ -266,7 +266,8 @@
           <div class="flex items-center gap-3">
             <button
               onclick="openSupportModal()"
-              class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 text-sm font-semibold rounded-xl transition-all duration-200 border border-purple-500/30"
+              class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 text-white text-sm font-semibold rounded-xl transition-all duration-200 border border-white"
+              style="background-color: hotpink"
             >
               <i class="fas fa-heart"></i> Support
             </button>
@@ -282,7 +283,7 @@
       </div>
       <div
         id="mobile-menu"
-        class="hidden md:hidden bg-purple-900 border-t border-purple-500/20"
+        class="hidden md:hidden bg-purple-900 border-t border-purple-500/30"
       >
         <div class="px-4 py-4 space-y-2">
           <a
@@ -305,15 +306,6 @@
             class="block px-4 py-2.5 rounded-lg text-purple-200 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
             >FAQ</a
           >
-          <button
-            onclick="
-              openSupportModal();
-              mobileMenu.classList.add('hidden');
-            "
-            class="block w-full text-left px-4 py-2.5 rounded-lg text-purple-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
-          >
-            <i class="fas fa-heart mr-2"></i>Support
-          </button>
         </div>
       </div>
     </nav>
@@ -350,14 +342,6 @@
             <div
               class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-semibold text-purple-300 tracking-wide uppercase animate-slide-up"
             >
-              <span class="relative flex h-2 w-2">
-                <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"
-                ></span>
-                <span
-                  class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"
-                ></span>
-              </span>
               100% Free • Works Offline
             </div>
             <h1
@@ -374,7 +358,7 @@
               Track customers who borrowed from you, manage suppliers you
               borrowed from, and get trust rankings for both — all offline, no
               fees, with optional ads you control.<br /><br />Works in any
-              currency. Give it a try!
+              currency. Try it!
             </p>
             <div
               class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-slide-up"
@@ -469,7 +453,7 @@
             >
               <div class="flex items-center gap-2">
                 <div
-                  class="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"
+                  class="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center"
                 >
                   <i class="fas fa-wifi text-purple-400 text-sm"></i>
                 </div>
@@ -484,7 +468,7 @@
             >
               <div class="flex items-center gap-2">
                 <div
-                  class="w-7 h-7 rounded-lg bg-purple-500/20 flex items-center justify-center"
+                  class="w-7 h-7 rounded-lg bg-purple-500/30 flex items-center justify-center"
                 >
                   <i
                     class="fas fa-cloud-upload-alt text-purple-400 text-sm"
@@ -535,9 +519,9 @@
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
           >
-            <i class="fas fa-bolt"></i> Core Features
+            Core Features
           </div>
           <h2
             class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-white"
@@ -554,7 +538,7 @@
           <!-- Customer feature -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-customer-500/10 flex items-center justify-center mb-5 group-hover:bg-customer-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-customer-500/10 flex items-center justify-center mb-5 group-hover:bg-customer-500/30 transition-colors"
             >
               <i class="fas fa-user text-customer-500 text-xl"></i>
             </div>
@@ -569,7 +553,7 @@
           <!-- Supplier feature -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-supplier-500/10 flex items-center justify-center mb-5 group-hover:bg-supplier-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-supplier-500/10 flex items-center justify-center mb-5 group-hover:bg-supplier-500/30 transition-colors"
             >
               <i class="fas fa-truck text-supplier-500 text-xl"></i>
             </div>
@@ -585,7 +569,7 @@
           <!-- Trust ranking -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-5 group-hover:bg-purple-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-5 group-hover:bg-purple-500/30 transition-colors"
             >
               <i class="fas fa-shield-alt text-purple-400 text-xl"></i>
             </div>
@@ -599,7 +583,7 @@
           <!-- Offline -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-5 group-hover:bg-purple-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-5 group-hover:bg-purple-500/30 transition-colors"
             >
               <i class="fas fa-wifi text-purple-400 text-xl"></i>
             </div>
@@ -614,7 +598,7 @@
           <!-- Free -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-warning-500/10 flex items-center justify-center mb-5 group-hover:bg-warning-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-warning-500/10 flex items-center justify-center mb-5 group-hover:bg-warning-500/30 transition-colors"
             >
               <i class="fas fa-ban text-warning-400 text-xl"></i>
             </div>
@@ -626,7 +610,7 @@
           <!-- Optional ads -->
           <div class="feature-card rounded-2xl p-6 sm:p-8 scroll-reveal">
             <div
-              class="w-12 h-12 rounded-2xl bg-highlight-500/10 flex items-center justify-center mb-5 group-hover:bg-highlight-500/20 transition-colors"
+              class="w-12 h-12 rounded-2xl bg-highlight-500/10 flex items-center justify-center mb-5 group-hover:bg-highlight-500/30 transition-colors"
             >
               <i class="fas fa-toggle-on text-highlight-400 text-xl"></i>
             </div>
@@ -649,9 +633,9 @@
     >
       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4 scroll-reveal"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4 scroll-reveal"
         >
-          <i class="fas fa-magic"></i> Simple Setup
+        Simple Setup
         </div>
         <h2
           class="text-3xl sm:text-4xl font-black tracking-tight mb-4 scroll-reveal text-white"
@@ -670,7 +654,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-customer-500/20 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-customer-500/30 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
                   >
                     1
                   </div>
@@ -686,7 +670,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-customer-500/20 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-customer-500/30 flex items-center justify-center text-2xl font-black text-customer-400 mb-4"
                   >
                     2
                   </div>
@@ -702,7 +686,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-2xl font-black text-purple-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-purple-500/30 flex items-center justify-center text-2xl font-black text-purple-400 mb-4"
                   >
                     3
                   </div>
@@ -725,7 +709,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-supplier-500/20 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-supplier-500/30 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
                   >
                     1
                   </div>
@@ -741,7 +725,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-supplier-500/20 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-supplier-500/30 flex items-center justify-center text-2xl font-black text-supplier-400 mb-4"
                   >
                     2
                   </div>
@@ -757,7 +741,7 @@
                   class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6"
                 >
                   <div
-                    class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-2xl font-black text-purple-400 mb-4"
+                    class="w-12 h-12 rounded-2xl bg-purple-500/30 flex items-center justify-center text-2xl font-black text-purple-400 mb-4"
                   >
                     3
                   </div>
@@ -798,7 +782,7 @@
             <div class="carousel-slide active">
               <div class="text-center mb-8">
                 <div
-                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-customer-500/10 border border-customer-500/20 text-customer-400 text-xs font-semibold tracking-wide uppercase mb-4"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-customer-500/10 border border-customer-500/30 text-customer-400 text-xs font-semibold tracking-wide uppercase mb-4"
                 >
                   Customers
                 </div>
@@ -830,7 +814,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/30 text-customer-400 text-xs font-bold"
                         ><i class="fas fa-shield-alt"></i> High Trust</span
                       >
                     </div>
@@ -855,7 +839,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-500/20 text-warning-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-500/30 text-warning-400 text-xs font-bold"
                         ><i class="fas fa-exclamation-circle"></i> Low
                         Trust</span
                       >
@@ -881,7 +865,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-supplier-500/20 text-supplier-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-supplier-500/30 text-supplier-400 text-xs font-bold"
                         ><i class="fas fa-exclamation-triangle"></i> High
                         Risk</span
                       >
@@ -904,7 +888,7 @@
             <div class="carousel-slide">
               <div class="text-center mb-8">
                 <div
-                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-supplier-500/10 border border-supplier-500/20 text-supplier-400 text-xs font-semibold tracking-wide uppercase mb-4"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-supplier-500/10 border border-supplier-500/30 text-supplier-400 text-xs font-semibold tracking-wide uppercase mb-4"
                 >
                   Suppliers
                 </div>
@@ -936,7 +920,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/20 text-customer-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-customer-500/30 text-customer-400 text-xs font-bold"
                         ><i class="fas fa-shield-alt"></i> High Trust</span
                       >
                     </div>
@@ -961,7 +945,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-500/20 text-warning-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-500/30 text-warning-400 text-xs font-bold"
                         ><i class="fas fa-exclamation-circle"></i> Low
                         Trust</span
                       >
@@ -987,7 +971,7 @@
                         >
                       </div>
                       <span
-                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-supplier-500/20 text-supplier-400 text-xs font-bold"
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-supplier-500/30 text-supplier-400 text-xs font-bold"
                         ><i class="fas fa-exclamation-triangle"></i> High
                         Risk</span
                       >
@@ -1030,9 +1014,9 @@
         class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal"
       >
         <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
         >
-          <i class="fas fa-heart"></i> Honest Business Model
+        Honest Business Model
         </div>
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-6 text-white"
@@ -1042,9 +1026,9 @@
         <p
           class="text-purple-200 text-lg leading-relaxed mb-10 max-w-2xl mx-auto"
         >
-          We believe small businesses deserve good tools without going broke.
-          Pesapad is funded by
-          <strong class="text-white">optional, user-controlled ads</strong> and
+          We believe small businesses deserve great tools
+          <strong>without barriers</strong>. Pesapad is funded by
+          <strong class="text-white">optional, user‑controlled ads</strong> and
           <strong class="text-white">voluntary donations</strong> — not by
           selling your data or trapping you in subscriptions.
         </p>
@@ -1142,7 +1126,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-14 scroll-reveal">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
           >
             <i class="fas fa-comment-dots"></i> Real Stories
           </div>
@@ -1242,7 +1226,7 @@
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14 scroll-reveal">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
           >
             <i class="fas fa-question-circle"></i> FAQ
           </div>
@@ -1392,7 +1376,7 @@
       >
         <div class="glass rounded-3xl p-8 sm:p-12 lg:p-16">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-wide uppercase mb-6"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wide uppercase mb-6"
           >
             <i class="fas fa-download"></i> Get Started Free
           </div>
@@ -1402,7 +1386,7 @@
             Ready to know<br />your <span class="gradient-text">numbers</span>?
           </h2>
           <p class="text-purple-200 text-lg max-w-xl mx-auto mb-8">
-            Download Pesapad now. Free forever. Works offline on<br />any
+            Download Pesapad now. Works offline on any
             Android device, regardless of screen size.
           </p>
           <div
@@ -1455,7 +1439,7 @@
               <img
                 src="assets/images/pesapad_logo_padded.png"
                 alt="Pesapad"
-                class="w-9 h-9 rounded-xl border-2 border-purple-500/30 shadow-lg shadow-purple-500/20"
+                class="w-9 h-9 rounded-full border-2 border-purple-500/30 shadow-lg shadow-purple-500/30"
               />
               <span class="text-xl font-bold text-white"
                 >Pesa<span class="text-purple-400">pad</span></span
@@ -1551,15 +1535,15 @@
             <ul class="space-y-2.5">
               <li>
                 <a
-                  href="https://twitter.com/pesapad"
+                  href="https://www.tiktok.com/@pesapad.app"
                   target="_blank"
                   class="text-sm text-purple-200 hover:text-white transition-colors flex items-center gap-2"
-                  ><i class="fab fa-twitter"></i> Twitter</a
+                  ><i class="fab fa-tiktok"></i> Tiktok</a
                 >
               </li>
               <li>
                 <a
-                  href="https://github.com/briankebabe"
+                  href="https://github.com/pesapad"
                   target="_blank"
                   class="text-sm text-purple-200 hover:text-white transition-colors flex items-center gap-2"
                   ><i class="fab fa-github"></i> GitHub</a
@@ -1568,6 +1552,7 @@
               <li>
                 <a
                   href="https://wa.me/254748251265?text=Hello%20Pesapad%20Team%2C%20I%20have%20a%20question%20about%20the%20app."
+                  target="_blank"
                   class="text-sm text-purple-200 hover:text-white transition-colors flex items-center gap-2"
                   ><i class="fab fa-whatsapp"></i> WhatsApp</a
                 >
@@ -1599,12 +1584,24 @@
       </div>
     </footer>
 
+    <!-- ====== BACK TO TOP ====== -->
     <button
       id="back-to-top"
       class="fixed bottom-6 right-6 z-50 p-4 rounded bg-purple-600 hover:bg-purple-500 text-white shadow-lg transition-all duration-300 opacity-0 invisible hover:scale-105"
       aria-label="Back to top"
     >
       <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ====== FLOATING SUPPORT BUTTON (FAB) ====== -->
+    <button
+      id="fab-support"
+      class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full hover:bg-purple-400 shadow-xl shadow-purple-500/40 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-purple-400/60"
+      style="background-color: hotpink"
+      aria-label="Support Pesapad"
+      onclick="openSupportModal()"
+    >
+      <i class="fas fa-heart text-xl"></i>
     </button>
 
     <script src="main.js"></script>

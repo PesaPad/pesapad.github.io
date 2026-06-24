@@ -112,6 +112,129 @@
 </head>
 <body class="bg-purple-950 text-white">
 
+  <!-- ====== SUPPORT MODAL ====== -->
+  <div
+    id="supportModal"
+    class="support-modal-overlay"
+    onclick="if (event.target === this) closeSupportModal();"
+  >
+    <div class="support-modal">
+      <button
+        onclick="closeSupportModal()"
+        class="float-right text-purple-300 hover:text-white transition-colors"
+      >
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <h2 class="text-2xl font-bold mb-2">Keep Pesapad Free</h2>
+      <p class="text-purple-300 text-sm mb-6">
+        Your voluntary support helps maintain servers and add new features.
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <a
+          href="https://buymeacoffee.com/pesapad"
+          target="_blank"
+          class="donation-card donation-bmc"
+        >
+          <i class="fas fa-coffee"></i>
+          <h3>Buy Me a Coffee</h3>
+          <p>One‑time or monthly</p>
+        </a>
+        <a
+          href="https://ko-fi.com/pesapad"
+          target="_blank"
+          class="donation-card donation-kofi"
+        >
+          <i class="fab fa-kickstarter-k"></i>
+          <h3>Ko-fi</h3>
+          <p>0% fees</p>
+        </a>
+        <a
+          href="https://paypal.me/pesapad"
+          target="_blank"
+          class="donation-card donation-paypal"
+        >
+          <i class="fab fa-paypal"></i>
+          <h3>PayPal</h3>
+          <p>@pesapad</p>
+        </a>
+        <a
+          href="https://github.com/sponsors/pesapad"
+          target="_blank"
+          class="donation-card donation-github"
+        >
+          <i class="fab fa-github"></i>
+          <h3>GitHub Sponsors</h3>
+          <p>Open‑source</p>
+        </a>
+      </div>
+
+      <h3
+        class="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3"
+      >
+        Cryptocurrency
+      </h3>
+      <div class="space-y-2">
+        <div class="crypto-card crypto-btc">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-medium">Bitcoin (BTC)</span>
+          </div>
+          <div class="address-row">
+            <code id="btc-address"
+              >bc1q2v229l0pj0auskul9yf78vq5p2tmlv75x89j8s</code
+            >
+            <button onclick="copyToClipboard('btc-address')" class="copy-btn">
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="crypto-card crypto-eth">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-medium">Ethereum (ETH)</span>
+          </div>
+          <div class="address-row">
+            <code id="eth-address"
+              >0x7d7433768c74e742ea6c5118ff38b5caa945fb29</code
+            >
+            <button onclick="copyToClipboard('eth-address')" class="copy-btn">
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="crypto-card crypto-sol">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-medium">Solana (SOL)</span>
+          </div>
+          <div class="address-row">
+            <code id="sol-address"
+              >Z2UnnWt9oaM1AqDwksi5WrYwMgJxwfBcDpMWY8Sh5HJ</code
+            >
+            <button onclick="copyToClipboard('sol-address')" class="copy-btn">
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="crypto-card crypto-doge">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-sm font-medium">Dogecoin (DOGE)</span>
+          </div>
+          <div class="address-row">
+            <code id="doge-address">DRVoAYndbsXi9kY2L2Hc9tmCuJ8eG1hFJE</code>
+            <button
+              onclick="copyToClipboard('doge-address')"
+              class="copy-btn"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-purple-400 mt-3 text-center">
+        Only send the respective cryptocurrency to each address.
+      </p>
+    </div>
+  </div>
+
   <!-- ====== NAVBAR ====== -->
   <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,6 +373,17 @@
     </div>
   </footer>
 
+  <!-- ====== FLOATING SUPPORT BUTTON (FAB) ====== -->
+  <button
+    id="fab-support"
+    class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full hover:bg-purple-400 shadow-xl shadow-purple-500/40 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-purple-400/60"
+      style="background-color: hotpink"
+    aria-label="Support Pesapad"
+    onclick="openSupportModal()"
+  >
+    <i class="fas fa-heart text-xl"></i>
+  </button>
+
   <script>
     document.getElementById('currentYear').innerText = new Date().getFullYear();
 
@@ -273,6 +407,26 @@
         if (mobileBtn) mobileBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
       });
     });
+
+    // Support Modal
+    function openSupportModal() {
+      document.getElementById('supportModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSupportModal() {
+      document.getElementById('supportModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSupportModal();
+    });
+
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert('Address copied to clipboard!'))
+        .catch(() => alert('Could not copy. Please select and copy manually.'));
+    }
   </script>
 </body>
 </html>

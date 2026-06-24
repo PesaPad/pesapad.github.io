@@ -214,3 +214,9 @@ backToTopBtn.addEventListener("click", () => {
 document.querySelectorAll("#currentYear").forEach((el) => {
   el.innerText = new Date().getFullYear();
 });
+
+// ====== FLOATING SUPPORT BUTTON (FAB) ======
+const fab = document.getElementById("fab-support");
+if (fab) {
+  fab.addEventListener("click", openSupportModal);
+}
