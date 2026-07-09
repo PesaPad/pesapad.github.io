@@ -183,6 +183,29 @@ function copyToClipboard(elementId) {
     });
 }
 
+function copyPayPalEmail() {
+  const email = "pesapad.app@gmail.com";
+  navigator.clipboard
+    .writeText(email)
+    .then(() => {
+      alert("PayPal email copied to clipboard!");
+    })
+    .catch(() => {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        alert("PayPal email copied to clipboard!");
+      } catch (err) {
+        alert("Could not copy. Please copy manually: " + email);
+      }
+      document.body.removeChild(textArea);
+    });
+}
+
 // ====== SMOOTH SCROLL ======
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
