@@ -6,7 +6,7 @@
     <title>Pesapad – Know Your Numbers | Free Offline Bill Tracker</title>
     <meta
       name="description"
-      content="Track customer debts, manage supplier payments, and get trust scores — completely offline, completely free. No monthly fees, no internet required."
+      content="Peselps you track who you gave money to, who you took money from, and see their trust scores – even without internet, completely free. No monthly fees."
     />
     <meta
       name="keywords"
@@ -20,6 +20,8 @@
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -364,9 +366,9 @@
               class="text-lg sm:text-xl text-purple-200 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-slide-up"
               style="animation-delay: 0.2s"
             >
-              Track customers who borrowed from you, manage suppliers you
-              borrowed from, and get trust scores for both — works offline and
-              no fees.<br /><br />Works in any currency. Try it!
+              Helps you track who you gave money to, who you took money from,
+              and see their trust scores – even without internet.<br /><br />Works
+              in any currency. Try it!
             </p>
             <div
               class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-slide-up"
@@ -554,7 +556,7 @@
               Track Customer Debts
             </h3>
             <p class="text-purple-200 text-sm leading-relaxed">
-              See who borrowed from you, how much, and how many reminders you
+              See who you gave money to, how much, and how many reminders you
               sent to them. Send reminders before payments are late.
             </p>
           </div>
@@ -713,7 +715,7 @@
                 </div>
               </div>
               <p class="text-xs text-purple-400 mt-4">
-                For Customers – track who borrowed from you
+                For Customers – track who you gave money to
               </p>
             </div>
             <div class="carousel-slide">
@@ -762,8 +764,8 @@
                     Know Who Trusts You
                   </h3>
                   <p class="text-purple-200 text-sm">
-                    See your trust scores and late promises. Know who trusts
-                    you more.
+                    See your trust scores and late promises. Know who trusts you
+                    more.
                   </p>
                 </div>
               </div>
@@ -1149,89 +1151,147 @@
             Loved by small business owners
           </h2>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
+        <!-- Container for dynamic testimonials (horizontal scroll) -->
+        <div
+          id="testimonials-container"
+          class="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+        >
+          <!-- Cards will be injected here by JavaScript -->
+        </div>
+        <!-- Empty state (hidden by default) -->
+        <div id="testimonials-empty" class="text-center py-12 hidden">
+          <i class="fas fa-comment-slash text-4xl text-purple-400"></i>
+          <p class="text-purple-200 text-lg mt-4">
+            No stories yet. Be the first to share your experience!
+          </p>
+          <a
+            href="#submit-story"
+            class="inline-block mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-500 rounded-xl transition"
+            >Share Your Story</a
           >
-            <div class="flex items-center gap-1 mb-4">
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-            </div>
-            <p class="text-purple-200 text-sm leading-relaxed mb-5">
-              "Before Pesapad, I used notebooks. Now I know exactly who to trust
-              with credit. My bad debts dropped by 70% in just one month."
-            </p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-full bg-customer-500 flex items-center justify-center text-white font-bold text-sm"
-              >
-                AW
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-white">Mercy Maina</p>
-                <p class="text-xs text-purple-300">
-                  Grocery Shop Owner, Nairobi
-                </p>
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== REAL STORIES – SUBMIT YOURS ====== -->
+    <section
+      id="submit-story"
+      class="relative bg-purple-950 py-20 sm:py-28 border-t border-white/5"
+    >
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-reveal">
           <div
-            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-semibold tracking-wide uppercase mb-4"
           >
-            <div class="flex items-center gap-1 mb-4">
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-            </div>
-            <p class="text-purple-200 text-sm leading-relaxed mb-5">
-              "The offline feature is a game changer. My area has spotty
-              internet, but Pesapad never lets me down. And it's actually free —
-              no tricks."
-            </p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-full bg-supplier-500 flex items-center justify-center text-white font-bold text-sm"
-              >
-                DM
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-white">David Maina</p>
-                <p class="text-xs text-purple-300">Hardware Store, Mombasa</p>
-              </div>
-            </div>
+            <i class="fas fa-pen"></i> Share Your Experience
           </div>
-          <div
-            class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 scroll-reveal"
-          >
-            <div class="flex items-center gap-1 mb-4">
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-              <i class="fas fa-star text-highlight-500"></i>
-            </div>
-            <p class="text-purple-200 text-sm leading-relaxed mb-5">
-              "Trust scores changed how I do business. I can see at a glance
-              who's reliable and who needs a follow-up. Worth every second — and
-              it costs nothing!"
-            </p>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-full bg-highlight-500 flex items-center justify-center text-purple-950 font-bold text-sm"
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Tell us your story
+          </h2>
+          <p class="text-purple-200 text-lg mt-2">
+            How has Pesapad helped your business? We'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 sm:p-8 scroll-reveal">
+          <form id="testimonial-form" class="space-y-5">
+            <!-- Name -->
+            <div>
+              <label
+                for="story-name"
+                class="block text-sm font-medium text-purple-200 mb-1"
+                >Your Name <span class="text-red-400">*</span></label
               >
-                GT
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-white">Grace Tito</p>
-                <p class="text-xs text-purple-300">Fabric Trader, Mombasa</p>
-              </div>
+              <input
+                type="text"
+                id="story-name"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="e.g., Mercy Maina"
+              />
             </div>
-          </div>
+
+            <!-- Business Name -->
+            <div>
+              <label
+                for="story-business"
+                class="block text-sm font-medium text-purple-200 mb-1"
+                >Business Name
+                <span class="text-purple-400">(optional)</span></label
+              >
+              <input
+                type="text"
+                id="story-business"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="e.g., Grocery Shop"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label
+                for="story-message"
+                class="block text-sm font-medium text-purple-200 mb-1"
+                >Your Story <span class="text-red-400">*</span></label
+              >
+              <textarea
+                id="story-message"
+                rows="4"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Tell us how Pesapad helped you..."
+              ></textarea>
+            </div>
+
+            <!-- Rating (stars) -->
+            <div>
+              <label class="block text-sm font-medium text-purple-200 mb-2"
+                >Rate your experience <span class="text-red-400">*</span></label
+              >
+              <div id="star-rating" class="flex items-center gap-1 text-2xl">
+                <span class="star" data-value="1"
+                  ><i
+                    class="far fa-star text-purple-300 cursor-pointer hover:text-highlight-400 transition-colors"
+                  ></i
+                ></span>
+                <span class="star" data-value="2"
+                  ><i
+                    class="far fa-star text-purple-300 cursor-pointer hover:text-highlight-400 transition-colors"
+                  ></i
+                ></span>
+                <span class="star" data-value="3"
+                  ><i
+                    class="far fa-star text-purple-300 cursor-pointer hover:text-highlight-400 transition-colors"
+                  ></i
+                ></span>
+                <span class="star" data-value="4"
+                  ><i
+                    class="far fa-star text-purple-300 cursor-pointer hover:text-highlight-400 transition-colors"
+                  ></i
+                ></span>
+                <span class="star" data-value="5"
+                  ><i
+                    class="far fa-star text-purple-300 cursor-pointer hover:text-highlight-400 transition-colors"
+                  ></i
+                ></span>
+              </div>
+              <p id="rating-hint" class="text-xs text-purple-300 mt-1">
+                Click a star to rate (1 = poor, 5 = excellent)
+              </p>
+            </div>
+
+            <!-- Submit button -->
+            <button
+              type="submit"
+              id="submit-story-btn"
+              class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-purple-800/30 hover:shadow-purple-600/40 flex items-center justify-center gap-2"
+            >
+              <i class="fas fa-paper-plane"></i> Submit Story
+            </button>
+
+            <!-- Feedback message -->
+            <div id="story-feedback" class="text-sm text-center hidden"></div>
+          </form>
         </div>
       </div>
     </section>
@@ -1274,8 +1334,8 @@
                 (you watch a short product showcase to view trust scores) and
                 <strong class="text-white">voluntary donations</strong>. Core
                 features like bills, payments, and contacts are always ad‑free –
-                you only see an ad when you choose to unlock trust scores for the
-                day. <br /><br />
+                you only see an ad when you choose to unlock trust scores for
+                the day. <br /><br />
                 You also choose which product categories interest you, so the
                 ads are relevant and personalised.
               </p>
@@ -1317,8 +1377,8 @@
             </button>
             <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6">
               <p class="text-sm text-purple-200 leading-relaxed">
-                Yes! Pesapad has separate tabs for customers (those who borrowed
-                from you) and suppliers (those you borrowed from). You get trust
+                Yes! Pesapad has separate tabs for customers (those you gave
+                money to) and suppliers (those you borrowed from). You get trust
                 scores for both sides.
               </p>
             </div>

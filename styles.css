@@ -464,3 +464,25 @@ body {
     height: 6px;
   }
 }
+
+/* ---- Custom scrollbar for testimonials horizontal carousel ---- */
+#testimonials-container::-webkit-scrollbar {
+  height: 6px; /* height of the horizontal scrollbar */
+}
+#testimonials-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+#testimonials-container::-webkit-scrollbar-thumb {
+  background: var(--primary-400); /* #7e57c2 */
+  border-radius: 10px;
+}
+#testimonials-container::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-500); /* #5e35b1 */
+}
+
+/* Firefox */
+#testimonials-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-400) rgba(255, 255, 255, 0.05);
+}
