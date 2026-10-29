@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Pesapad logo mark</title>
+  <desc id="desc">A geometric isometric P-shaped mark made from four flat blue polygons.</desc>
+  <rect width="512" height="512" fill="none"/>
+  <g stroke-linejoin="miter">
+    <polygon points="254,122 335,169 256,216 175,169" fill="#3F639A"/>
+    <polygon points="175,169 256,216 256,403 176,356" fill="#7899C6"/>
+    <polygon points="256,216 335,170 336,264 256,310" fill="#1D416F"/>
+    <polygon points="256,216 336,264 256,310" fill="#0C1028"/>
+  </g>
+</svg>

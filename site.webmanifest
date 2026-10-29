@@ -1,0 +1,13 @@
+{
+  "name": "Pesapad",
+  "short_name": "Pesapad",
+  "description": "A small-business Android app for customer bills, supplier balances and payment-pattern insights.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F5F8FD",
+  "theme_color": "#1D416F",
+  "icons": [
+    {"src": "./assets/images/pesapad-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "./assets/images/pesapad-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+  ]
+}
