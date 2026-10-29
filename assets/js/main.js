@@ -77,7 +77,6 @@
 
   // Copy support email and cryptocurrency addresses with a graceful fallback.
   const copyButtons = document.querySelectorAll("[data-copy]");
-  const copyStatus = document.getElementById("support-copy-status");
   copyButtons.forEach((button) => {
     button.addEventListener("click", async () => {
       const value = button.getAttribute("data-copy") || "";
@@ -101,10 +100,6 @@
       } catch (_) {
         copied = false;
       }
-      if (copyStatus)
-        copyStatus.textContent = copied
-          ? "Copied to clipboard."
-          : "Copy was unavailable. Please select and copy the address manually.";
       const original = button.textContent;
       button.textContent = copied ? "Copied ✓" : "Select manually";
       if (copied)

@@ -1594,17 +1594,21 @@ h1 {
   font-size: 22px;
   font-weight: 800;
 }
-.support-option-icon--kofi {
-  background: #fff0f2;
-  color: #d84862;
+.support-option-icon--bmc {
+  background: #fff1b7;
+  color: #584400;
 }
-.support-option-icon--mail {
-  background: #e9f6f0;
-  color: #237958;
+.support-option-icon--kofi {
+  background: #ffe6e4;
+  color: #d74d51;
+}
+.support-option-icon--paypal {
+  background: #e5f2ff;
+  color: #1268aa;
 }
 .support-option-icon--github {
-  background: #eef0f5;
-  color: #202a3b;
+  background: #eeeaf4;
+  color: #483761;
 }
 .support-option-copy {
   display: block;
@@ -1728,14 +1732,6 @@ h1 {
   font-size: 10px;
   line-height: 1.7;
   text-align: center;
-}
-.support-status {
-  min-height: 18px;
-  margin: 12px 0 0;
-  text-align: center;
-  color: #237958;
-  font-size: 12px;
-  font-weight: 700;
 }
 
 .download-section {
