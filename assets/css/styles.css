@@ -785,6 +785,18 @@ h1 {
   background: #ebf6f4;
   color: #2c8b79;
 }
+.icon-customer {
+    background: #ebf6f4;
+    color: #2c8b79;
+}
+.icon-supplier {
+    background: #fdf0ee;
+    color: #f77569;
+}
+.icon-send {
+    background: #fdf3ed;
+    color: #e8722a;
+}  
 .feature-label {
   display: block;
   font-size: 10px;
