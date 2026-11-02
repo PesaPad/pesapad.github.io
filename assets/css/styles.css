@@ -2165,7 +2165,7 @@ h1 {
   .brand-mark {
     width: 39px;
     height: 39px;
-    border-radius: 12px;
+    border-radius: 50%;
   }
   .brand-name {
     font-size: 21px;
